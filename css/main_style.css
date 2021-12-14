@@ -92,7 +92,7 @@ header .titulo {
     color: #000;
     border-radius: 6px;
     font-weight: bold;
-    font-size: 1.15rem;
+    font-size: 1rem;
     transition: .3s all ease;
 }
 
@@ -125,7 +125,7 @@ header .titulo {
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.15rem;
+    font-size: 1rem;
     transition: .3s all ease;
 }
 
@@ -197,6 +197,7 @@ header .titulo {
     border-radius: 5px;
     font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 /* -------------------------------- */
