@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #1C2E3D;
+    font-size: 16px;
+}
+
+.principal{
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* -------------------------------- */
+/* ------------ Header ------------ */
+/* -------------------------------- */
+
+header {
+    width: 100%;
+    height: 80px;
+    margin: 20px 0;
+    padding: 10px 14px;
+    border-radius: .5rem;
+    background: #72BEFC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .titulo_proyecto {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    width: 60px;
+    border-radius: 50%;
+}
+
+header .titulo {
+    margin-left: 14px;
+    font-size: 2.5rem;
+    color: #1C2E3D;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info_user {
+    text-align: right;
+}
+
+.info_user .username {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.info_user .role {
+    font-size: 1rem;
+}
+
+/* -------------------------------- */
+/* ------------- Menú ------------- */
+/* -------------------------------- */
+
+.nav {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px 14px;
+    border-radius: .5rem;
+    background: #72BEFC;
+}
+
+.nav .menu {
+    list-style: none;
+}
+
+.nav .menu > li {
+    display: inline-block;
+}
+
+.nav .menu > li a {
+    margin: 0 8px;
+    padding: 8px 22px;
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.15rem;
+    transition: .3s all ease;
+}
+
+.nav .menu > li a:hover {
+    background: #ffffff8f;
+}
+
+/* -------------------------------- */
+/* ---------- Contenedor ---------- */
+/* -------------------------------- */
+
+.contenedor {
+    padding: 10px 14px;
+    width: calc(80% - 20px);
+    height: calc(100vh - 280px);
+    float: left;
+    background: #72BEFC;
+    border-radius: .5rem;
+}
+
+/* --------------------------------- */
+/* ------------ Sidebar ------------ */
+/* --------------------------------- */
+
+.aside {
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    width: 20%;
+    height: calc(100vh - 220px);
+    float: right;
+    background: #72BEFC;
+    border-radius: .5rem;
+}
+
+.aside .titulo-form {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin: 12px 0;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    margin: 6px 0;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.formulario .btn-form {
+    width: 100%;
+    padding: 10px 0;
+    background: #7de052;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* -------------------------------- */
+/* ------------ Footer ------------ */
+/* -------------------------------- */
+
+.footer {
+    margin-top: 20px;
+    padding: 0 14px;
+    width: calc(80% - 20px);
+    height: 40px;
+    float: left;
+    background: #000;
+    color: #fff;
+    border-radius: .5rem;
+    line-height: 40px;
+}
