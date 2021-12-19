@@ -117,6 +117,15 @@ header .titulo {
 
 .menu .submenu li {
     display: block;
+    position: relative;
+}
+
+.menu .submenu li.titulo-list {
+    display: block;
+    padding: 8px 22px;
+    background: #ffb753;
+    font-size: 1rem;
+    border-radius: .5rem .5rem 0 0;
 }
 
 .menu .submenu > li > a {
@@ -129,12 +138,31 @@ header .titulo {
     transition: .3s all ease;
 }
 
+.menu .submenu > li:first-child > a {
+    border-radius: .5rem .5rem 0 0;
+}
+
+.menu .submenu > li:last-child > a {
+    border-radius: 0 0 .5rem .5rem;
+}
+
 .nav .submenu > li > a:hover {
     background: #ffffff8f;
 }
 
 .nav .menu > li:hover .submenu {
     display: block;
+}
+
+.nav .submenu li .submenu {
+    display: none !important;
+    margin: 0;
+    margin-left: calc(100%);
+    top: 0;
+}
+
+.nav .submenu > li:hover .submenu {
+    display: block !important;
 }
 
 /* -------------------------------- */
