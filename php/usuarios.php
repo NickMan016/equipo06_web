@@ -16,6 +16,11 @@ if ($conexion->connect_errno) {
     $response = [];
 
     while ($fila = $result->fetch_assoc()) {
+        $password = '';
+        for ($i=0; $i < strlen($fila['password']); $i++) {
+            $password .= '*';
+        }
+        $fila['password'] = $password;
         array_push($response, $fila);
     }
     

@@ -161,7 +161,7 @@ header .titulo {
     top: 0;
 }
 
-.submenu > li > a.active {
+.submenu li > a.active {
     background: #7de052 !important;
 }
 

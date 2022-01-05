@@ -54,9 +54,6 @@ $(document).ready(function () {
             cargarActividades();
         if (activeTab == '#tab6')
             cargarEvaluacion();
-        // else{
-        //     $(activeTab).show();
-        // }
 
         if (activeTab == '#tab8')
             actualizarPerfil();
@@ -161,7 +158,7 @@ $("#btn-form-perfil").click(function (e) {
         url: "php/perfil.php",
         data: $('.formulario-usuario').serialize(),
         success: (response) => {
-            console.log(response);
+            alert(response);
         }
     });
 });
