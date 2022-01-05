@@ -3,6 +3,41 @@ $(document).ready(function () {
     sesion();
     cargarActividades();
 
+    $.ajax({
+        type: "POST",
+        url: "php/temas.php",
+        data: { filter: 0 },
+        success: (response) => {
+            const lista_actividades = $("#actividades");
+            const actividades_contenido = $("#actividades-contenido");
+            for (let index = 0; index < response.length; index++) {
+                const element = response[index];
+                const item_list = $('<li>');
+                const actividad = $("<article>", {
+                    id: "act" + element.id_actividades,
+                    css: { display: "none" }
+                });
+                item_list.append($('<a>', {
+                    text: element.activity_tittle,
+                    href: '#act' + element.id_actividades
+                }).click(function () {
+                    menuActividades($(this).attr('href'));
+                }));
+
+                actividad.append($('<div>', {
+                    class: 'titulo-table',
+                    html: element.activity_tittle
+                }));
+                actividad.append($('<div>', {
+                    class: 'contenedor-actividad',
+                    html: element.task_description.replace(/\n/g, "<br/>"),
+                }));
+                lista_actividades.append(item_list);
+                actividades_contenido.append(actividad);
+            }
+        }
+    });
+
     $('ul.menu li a').click(function () {
         const activeTab = $(this).attr('href');
 
@@ -10,16 +45,20 @@ $(document).ready(function () {
             cargarActividades();
         // if (activeTab == '#tab2')
         //     cargarUsuarios(2);
-        // if (activeTab == '#tab3')
-        //     cargarUsuarios(3);
-        // if (activeTab == '#tab4')
-        //     cargarUsuarios();
+        if (activeTab == '#tab3')
+        cargarEvaluacion();
 
-        if (activeTab == '#tab6')
+        if (activeTab == '#tab5')
             actualizarPerfil();
     });
 
 });
+
+function menuActividades(activeTab) {
+    $('ul.menu li a').removeClass('active');
+    $('.secciones article').hide();
+    $(activeTab).show()
+}
 
 function cargarActividades() {
     $.ajax({
@@ -40,6 +79,20 @@ function cargarActividades() {
 
                 tabla.append(item_table);
             }
+        }
+    });
+}
+
+function cargarEvaluacion() {
+    $.ajax({
+        type: "POST",
+        url: "php/temas.php",
+        data: { filter: 5 },
+        success: (response) => {
+            console.log(response);
+            const evaluacion = response[0];
+            $("#titulo").text(evaluacion.activity_tittle);
+            $("#contenedor-actividad").html(evaluacion.task_description.replace(/\n/g, "<br/>"));
         }
     });
 }
