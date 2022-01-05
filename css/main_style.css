@@ -97,11 +97,11 @@ header .titulo {
 }
 
 .nav .menu > li > a:hover {
-    background: #ffffff8f;
+    background: #ffb753;
 }
 
-.nav .menu > li:hover > a {
-    background: #ffffff8f;
+.nav .menu > li > a.active {
+    background: #7de052;
 }
 
 .nav .submenu {
@@ -147,21 +147,25 @@ header .titulo {
 }
 
 .nav .submenu > li > a:hover {
-    background: #ffffff8f;
+    background: #ffb753;
 }
 
 .nav .menu > li:hover .submenu {
     display: block;
 }
 
-.nav .submenu li .submenu {
+.nav .submenu > li .submenu {
     display: none !important;
     margin: 0;
     margin-left: calc(100%);
     top: 0;
 }
 
-.nav .submenu > li:hover .submenu {
+.submenu > li > a.active {
+    background: #7de052 !important;
+}
+
+.submenu > li:hover > .submenu {
     display: block !important;
 }
 
@@ -170,12 +174,130 @@ header .titulo {
 /* -------------------------------- */
 
 .contenedor {
-    padding: 10px 14px;
+    padding: 14px;
     width: calc(80% - 20px);
     height: calc(100vh - 280px);
     float: left;
-    background: #72BEFC;
+    background: #fff;
     border-radius: .5rem;
+}
+
+.titulo-table {
+    padding: 10px 0;
+    background: #e072fc;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: .5rem;
+}
+
+.tabla {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tabla tr {
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+}
+
+.tabla td,
+.tabla th {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.tabla .head {
+    background: #72BEFC;
+    border-radius: .5rem .5rem 0 0;
+}
+
+.tabla .body tr {
+    border-bottom: 1px solid #000;
+}
+
+.tabla .body tr:last-child {
+    border-bottom: 3px solid #72BEFC;
+}
+
+.contenedor article iframe {
+    display: block;
+    margin: auto;
+    margin-top: 20px !important;
+}
+
+.contenedor-actividad {
+    height: 80%;
+    margin-top: 20px;
+    padding:  0 10px;
+    text-align: justify;
+    overflow-y: scroll;
+}
+
+/* --------------------------------- */
+/* ----------- Formulario ---------- */
+/* --------------------------------- */
+
+.formulario-usuario {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.formulario-usuario .form-row {
+    width: 100%;
+    display: flex;
+    align-content: space-between;
+}
+
+.formulario-usuario .form-group {
+    width: 100%;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+
+.formulario-usuario .form-group label{
+    width: 60%;
+}
+
+.formulario-usuario .form-group input,
+.formulario-usuario .form-group select{
+    width: 100%;
+    margin: 6px 0;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    outline: none;
+    transition: all .3s ease;
+}
+
+.formulario-usuario .form-group input:focus{
+    border: 3px solid #0060f0;
+}
+
+.botones-formulario-usuario {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.botones-formulario-usuario button {
+    width: calc(25% + 4%);
+    margin-right: 20px;
+    padding: 10px 0;
+    background: #7de052;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* --------------------------------- */
@@ -183,8 +305,9 @@ header .titulo {
 /* --------------------------------- */
 
 .aside {
+    position: relative;
     margin-bottom: 20px;
-    padding: 10px 14px;
+    padding: 14px;
     width: 20%;
     height: calc(100vh - 220px);
     float: right;
@@ -198,16 +321,16 @@ header .titulo {
     text-align: center;
 }
 
-.form-group {
+.formulario .form-group {
     margin: 12px 0;
 }
 
-.form-group label {
+.formulario .form-group label {
     font-weight: bold;
 }
 
-.form-group input,
-.form-group select {
+.formulario .form-group input,
+.formulario .form-group select {
     width: 100%;
     margin: 6px 0;
     padding: 8px 10px;
@@ -220,12 +343,43 @@ header .titulo {
 .formulario .btn-form {
     width: 100%;
     padding: 10px 0;
+    margin-bottom: 10px;
     background: #7de052;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+.formulario .btn-secondary {
+    background: #e072fc;
+}
+
+.formulario .btn-third {
+    background: #ffb753;
+}
+
+.formulario .btn-forth {
+    background: #ff5353;
+}
+
+@media screen and (max-height: 850px){
+    .aside {
+        overflow-y: scroll;
+        padding: 14px 18px;
+    }
+
+    .fecha {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (min-height: 850px){
+    .fecha {
+        position: absolute;
+        bottom: 10px;
+    }
 }
 
 /* -------------------------------- */

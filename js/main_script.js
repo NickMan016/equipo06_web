@@ -1,12 +1,31 @@
-function principal(){
-    document.getElementById('content').src = "ej_1.html";
-}
-function dibujos(){
-    document.getElementById('content').src = "ej_2.html";
-}
-function textGen(){
-    document.getElementById('content').src = "ej_3.html";
-}
-function diosito(){
-    document.getElementById('content').src = "ej_4.html";
+$(document).ready(function () {
+    let fecha = document.getElementById('fecha');
+    fecha.innerHTML = Date();
+
+    $('ul.menu li a:first').addClass('active');
+    $('.secciones article').hide();
+    $('.secciones article:first').show();
+
+    $('ul.menu li a').click(function () {
+        $('ul.menu li a').removeClass('active');
+        $(this).addClass('active');
+        $('.secciones article').hide();
+
+        const activeTab = $(this).attr('href');
+        $(activeTab).show();
+        return false;
+    });
+
+
+    // $('.secciones article').hide();
+    // $('#tab6').show();
+})
+
+function sesion() {
+    if (localStorage.getItem('sesion') == null) {
+        window.location.href = 'index.html';
+    } else {
+        const dataUser = JSON.parse(localStorage.getItem('dataUser'));
+        $(".username").text(dataUser.user);
+    }
 }
