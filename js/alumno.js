@@ -129,3 +129,10 @@ $("#btn-form-perfil").click(function (e) {
         }
     });
 });
+
+$(".btn-form").click(function (e) { 
+    e.preventDefault();
+    localStorage.removeItem('sesion');
+    localStorage.removeItem('dataUser');
+    window.location.href = 'index.html';
+});

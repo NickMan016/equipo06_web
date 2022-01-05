@@ -40,34 +40,36 @@
 						<h1>Bienvenido al Sistema</h1>
 					</article>
 					<article id="tab2">
-						<h1>Integrantes</h1>
-						<p>
-							<br/>Sánchez Zavala Carlos Enrique. <br/>
-							Líder del equipo 6. <br/>
-							Desarrollador de Software. <br/>
-							Desarrollé la parte del Back-end. <br/><br/>
-						</p>
-						<p>
-							Pérez Castillo Nicholas.<br/>
-							Trabajé en el desarrollo del front end, espacialmente en la creación del enmaquetado.<br/><br/>
-						</p>
-						<p>
-							Arredondo Salvador.<br/>
-							Trabajé en el desarrollo del front end, espacialmente en la creación del enmaquetado<br/><br/>
-						</p>
-						<p>
-							Martinez Fuentes Ivan.<br/>
-							Trabajé en el desarrollo del front end, especialmente en la creación de los formularios<br/><br/>
-						</p>
-							
-						<p>
-							Alejo Armado Arturo.<br/>
-							Trabajé en el desarrollo del front end, especialmente en la creación de los formularios.<br/><br/>
-						</p>
-						<p>
-							Paniagua Juárez  Nadia Patricia.<br/>
-							Estuve en la parte de desarrollo del front end, en sección de formularios. <br/><br/>
-						</p>
+						<div class="contenedor-actividad">
+							<h1>Integrantes</h1>
+							<p>
+								<br/>Sánchez Zavala Carlos Enrique. <br/>
+								Líder del equipo 6. <br/>
+								Desarrollador de Software. <br/>
+								Desarrollé la parte del Back-end. <br/><br/>
+							</p>
+							<p>
+								Pérez Castillo Nicholas.<br/>
+								Trabajé en el desarrollo del front end, espacialmente en la creación del enmaquetado.<br/><br/>
+							</p>
+							<p>
+								Arredondo Salvador.<br/>
+								Trabajé en el desarrollo del front end, espacialmente en la creación del enmaquetado<br/><br/>
+							</p>
+							<p>
+								Martinez Fuentes Ivan.<br/>
+								Trabajé en el desarrollo del front end, especialmente en la creación de los formularios<br/><br/>
+							</p>
+								
+							<p>
+								Alejo Armado Arturo.<br/>
+								Trabajé en el desarrollo del front end, especialmente en la creación de los formularios.<br/><br/>
+							</p>
+							<p>
+								Paniagua Juárez  Nadia Patricia.<br/>
+								Estuve en la parte de desarrollo del front end, en sección de formularios. <br/><br/>
+							</p>
+						</div>
 					</article>
 					<article id="tab3">
 						<h1>Vistas del Proyecto</h1>
@@ -79,7 +81,41 @@
 						</ul>
 					</article>
 					<article id="tab4">
-						<h1>Formulario</h1>
+						<div class="titulo-table">Formulario</div>
+						<form class="formulario-usuario">
+							<div class="form-row">
+								<div class="form-group">
+									<label for="nombre">Nombre Completo</label>
+									<input type="text" name="nombre" id="nombre" placeholder="Ingresa tu usuario">
+								</div>
+
+								<div class="form-group">
+									<label for="correoP">Correo Principal</label>
+									<input type="text" name="correoP" id="correoP" placeholder="Ingresa tu Correo Principal">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label for="asunto">Asunto</label>
+									<input type="text" name="asunto" id="asunto" placeholder="Ingresa tu Asunto">
+								</div>
+								<div class="form-group">
+									<label for="role">Tipo de Usuario</label>
+									<input type="text" name="role" id="role" placeholder="Ingresa tu Tipo de Usuario">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group group-textarea">
+									<label for="descripcion">Descripción</label>
+									<textarea name="descripcion" id="descripcion"></textarea>
+								</div>
+							</div>
+							<input type="hidden" name="id" id="id">
+							<input type="hidden" name="action" id="action" value="set">
+							<div class="botones-formulario-usuario">
+								<button id="btn-form-perfil">Enviar</button>
+							</div>
+						</form>
 					</article>
 					<article id="tab5">
 						<h1>Ayuda</h1>
