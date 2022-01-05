@@ -15,7 +15,7 @@ if ($conexion->connect_errno) {
         echo json_encode($result->fetch_assoc());
     }
     if ($_POST['action'] == 'set') {
-        $query = "UPDATE users SET complete_name = '" . $_POST['nombre'] . "', user = '" . $_POST['usuario'] . "', password = '" . $_POST['password'] . "', email = '" . $_POST['correoP'] . "', email_secundary = '" . $_POST['correoA'] . "', telefono = " . $_POST['telefono'] . " WHERE id_security = " . $_POST['id'];
+        $query = "UPDATE users SET complete_name = '" . $_POST['nombre'] . "', user = '" . $_POST['usuario'] . "', password = '" . $_POST['password'] . "', email = '" . $_POST['correoP'] . "', email_secundary = '" . $_POST['correoA'] . "', telefono = '" . $_POST['telefono'] . "' WHERE id_security = " . $_POST['id'];
 
         $conexion->query($query);
 

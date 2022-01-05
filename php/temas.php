@@ -10,7 +10,7 @@ if ($conexion->connect_errno) {
     if ($_POST['filter'] == "5")
         $query = "SELECT activities.id_actividades, activities.activity_tittle, activities.task_description, catmatirial.matirials FROM activities INNER JOIN catmatirial ON activities.material_type = catmatirial.id_matirial WHERE catmatirial.id_matirial = " . $_POST['filter'];
     else
-        $query = "SELECT * FROM activities WHERE material_type != 5";
+        $query = "SELECT * FROM activities INNER JOIN catmatirial ON activities.material_type = catmatirial.id_matirial WHERE material_type != 5";
 
     $result = $conexion->query($query);
 

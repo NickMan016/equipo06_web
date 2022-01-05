@@ -182,6 +182,12 @@ header .titulo {
     border-radius: .5rem;
 }
 
+.contenedor-tabla {
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 80%;
+}
+
 .titulo-table {
     padding: 10px 0;
     background: #e072fc;
@@ -193,8 +199,9 @@ header .titulo {
 
 .tabla {
     width: 100%;
-    margin-top: 20px;
+    height: 80%;
     text-align: center;
+    overflow-y: scroll;
 }
 
 .tabla tr {

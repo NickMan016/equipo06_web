@@ -26,37 +26,96 @@
 
 			<div class="nav">
 				<ul class="menu">
-					<li><a href="#">Bloque</a>
+					<li><a href="#tab1">Temas</a></li>
+					<li><a href="#tab2">Tipo de Material</a>
 						<ul class="submenu">
-							<li><a href="">Bloque 1</a></li>
-							<li><a href="">Bloque 2</a></li>
+							<li><a href="#tab3">Actividad en linea</a></li>
+							<li><a href="#tab4">Examen</a></li>
+							<li><a href="#tab5">Libro</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Temas</a></li>
-					<li><a href="#">Materia</a></li>
-					<li><a href="#">Actividad</a></li>
-					<li><a href="#">Tipo de Material</a>
-						<ul class="submenu">
-							<li><a href="">Video</a></li>
-							<li><a href="">Material para imprimir</a></li>
-							<li><a href="">Actividad en linea</a></li>
-							<li><a href="">Examen</a></li>
-							<li><a href="">Libro</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Actualización de Perfil</a>
-						<ul class="submenu">
-							<li><a href="">Foto</a></li>
-							<li><a href="">Datos Personales</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Soporte</a></li>
-					<li><a href="#">Ayuda</a></li>
+					<li><a href="#tab6">Actualización de Perfil</a></li>
+					<li><a href="#tab7">Soporte</a></li>
+					<li><a href="#tab8">Ayuda</a></li>
 				</ul>
 			</div>
 
 			<div class="contenedor">
-				<h1>Contenedor</h1>
+				<div class="secciones">
+					<article id="tab1">
+						<div class="titulo-table">Consulta de Temas del Bloque 1</div>
+						<div class="contenedor-tabla">
+							<table class="tabla">
+								<tr class="head">
+									<th>ID Tema</th>
+									<th>Bloque</th>
+									<th>Tema</th>
+									<th>Subtema</th>
+								</tr>
+								<tbody class="body" id="body-temas"></tbody>
+							</table>
+						</div>
+					</article>
+					<article id="tab2">
+
+					</article>
+					<section id="actividades-contenido"></section>
+					<article id="tab4">
+						<div class="titulo-table" id="titulo"></div>
+						<div class="contenedor-actividad" id="contenedor-actividad"></div>
+					</article>
+					<article id="tab5">
+						<div class="titulo-table">Libro</div>
+						<iframe src="https://libros.conaliteg.gob.mx/2021/P1MAA.htm?#page/177" frameborder="0" width="100%" height="80%"></iframe>
+					</article>
+					<article id="tab6">
+						<div class="titulo-table">Datos Personales</div>
+						<form class="formulario-usuario">
+							<div class="form-row">
+								<div class="form-group">
+									<label for="nombre">Nombre Completo</label>
+									<input type="text" name="nombre" id="nombre" placeholder="Ingresa tu usuario">
+								</div>
+
+								<div class="form-group">
+									<label for="telefono">Teléfono</label>
+									<input type="text" name="telefono" id="telefono" placeholder="Ingresa tu teléfono">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label for="correoP">Correo Principal</label>
+									<input type="text" name="correoP" id="correoP" placeholder="Ingresa tu Correo Principal">
+								</div>
+								<div class="form-group">
+									<label for="correoA">Correo Alterno</label>
+									<input type="text" name="correoA" id="correoA" placeholder="Ingresa tu Correo Alterno">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label for="usuario">Usuario</label>
+									<input type="text" name="usuario" id="usuario" placeholder="Ingresa tu Usuario">
+								</div>
+								<div class="form-group">
+									<label for="password">Contraseña</label>
+									<input type="password" name="password" id="password" placeholder="Ingresa tu Contraseña">
+								</div>
+							</div>
+							<input type="hidden" name="id" id="id">
+							<input type="hidden" name="action" id="action" value="set">
+							<div class="botones-formulario-usuario">
+								<button id="btn-form-perfil">Enviar</button>
+							</div>
+						</form>
+					</article>
+					<article id="tab7">
+
+					</article>
+					<article id="tab8">
+
+					</article>
+				</div>
 			</div>
 
 			<div class="aside">
@@ -71,7 +130,9 @@
 			</div>
 		</div>
 
+		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/main_script.js"></script>
+		<script src="js/alumno.js"></script>
 	</body>
 
 	</html>
