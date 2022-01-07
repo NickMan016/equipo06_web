@@ -40,10 +40,10 @@
 							<li><a href="">Bloque 3</a>
 								<ul class="submenu">
 									<li class="titulo-list">Tipo de Material</li>
-									<li><a href="#tab5">Actividad en linea</a>
+									<li><a href="">Actividad en linea</a>
 										<ul class="submenu" id="actividades">
 											<li class="titulo-list">Selecciona una Actividad</li>
-										</ul>	
+										</ul>
 									</li>
 									<li><a href="#tab6">Examen</a></li>
 									<li><a href="#tab7">Libro</a></li>
@@ -61,59 +61,71 @@
 				<div class="secciones">
 					<article id="tab1">
 						<div class="titulo-table">Administradores</div>
-						<table class="tabla">
-							<tr class="head">
-								<th>Nombre Completo</th>
-								<th>Correo Principal</th>
-								<th>Tipo de Usuario</th>
-								<th>Teléfono</th>
-								<th>Usuario</th>
-								<th>Contraseña</th>
-							</tr>
-							<tbody class="body" id="body-admin"></tbody>
-						</table>
+						<div class="contenedor-tabla">
+							<table class="tabla">
+								<tr class="head">
+									<th>Nombre Completo</th>
+									<th>Correo Principal</th>
+									<th>Tipo de Usuario</th>
+									<th>Teléfono</th>
+									<th>Usuario</th>
+									<th>Contraseña</th>
+									<th>Acciones</th>
+								</tr>
+								<tbody class="body" id="body-admin"></tbody>
+							</table>
+						</div>
 					</article>
 					<article id="tab2">
 						<div class="titulo-table">Profesores</div>
-						<table class="tabla">
-							<tr class="head">
-								<th>Nombre Completo</th>
-								<th>Correo Principal</th>
-								<th>Tipo de Usuario</th>
-								<th>Teléfono</th>
-								<th>Usuario</th>
-								<th>Contraseña</th>
-							</tr>
-							<tbody class="body" id="body-profesor"></tbody>
-						</table>
+						<div class="contenedor-tabla">
+							<table class="tabla">
+								<tr class="head">
+									<th>Nombre Completo</th>
+									<th>Correo Principal</th>
+									<th>Tipo de Usuario</th>
+									<th>Teléfono</th>
+									<th>Usuario</th>
+									<th>Contraseña</th>
+									<th>Acciones</th>
+								</tr>
+								<tbody class="body" id="body-profesor"></tbody>
+							</table>
+						</div>
 					</article>
 					<article id="tab3">
 						<div class="titulo-table">Alumnos</div>
-						<table class="tabla">
-							<tr class="head">
-								<th>Nombre Completo</th>
-								<th>Correo Principal</th>
-								<th>Tipo de Usuario</th>
-								<th>Teléfono</th>
-								<th>Usuario</th>
-								<th>Contraseña</th>
-							</tr>
-							<tbody class="body" id="body-alumno"></tbody>
-						</table>
+						<div class="contenedor-tabla">
+							<table class="tabla">
+								<tr class="head">
+									<th>Nombre Completo</th>
+									<th>Correo Principal</th>
+									<th>Tipo de Usuario</th>
+									<th>Teléfono</th>
+									<th>Usuario</th>
+									<th>Contraseña</th>
+									<th>Acciones</th>
+								</tr>
+								<tbody class="body" id="body-alumno"></tbody>
+							</table>
+						</div>
 					</article>
 					<article id="tab4">
 						<div class="titulo-table">Todos los Usuarios</div>
-						<table class="tabla">
-							<tr class="head">
-								<th>Nombre Completo</th>
-								<th>Correo Principal</th>
-								<th>Tipo de Usuario</th>
-								<th>Teléfono</th>
-								<th>Usuario</th>
-								<th>Contraseña</th>
-							</tr>
-							<tbody class="body" id="body-all"></tbody>
-						</table>
+						<div class="contenedor-tabla">
+							<table class="tabla">
+								<tr class="head">
+									<th>Nombre Completo</th>
+									<th>Correo Principal</th>
+									<th>Tipo de Usuario</th>
+									<th>Teléfono</th>
+									<th>Usuario</th>
+									<th>Contraseña</th>
+									<th>Acciones</th>
+								</tr>
+								<tbody class="body" id="body-all"></tbody>
+							</table>
+						</div>
 					</article>
 					<section id="actividades-contenido"></section>
 					<article id="tab6">
@@ -122,7 +134,8 @@
 					</article>
 					<article id="tab7">
 						<div class="titulo-table">Libro</div>
-						<iframe src="https://libros.conaliteg.gob.mx/2021/P1MAA.htm?#page/177" frameborder="0" width="100%" height="80%"></iframe>
+						<iframe src="https://libros.conaliteg.gob.mx/2021/P1MAA.htm?#page/177" frameborder="0"
+							width="100%" height="80%"></iframe>
 					</article>
 					<article id="tab8">
 						<div class="titulo-table">Datos Personales</div>
@@ -141,11 +154,13 @@
 							<div class="form-row">
 								<div class="form-group">
 									<label for="correoP">Correo Principal</label>
-									<input type="text" name="correoP" id="correoP" placeholder="Ingresa tu Correo Principal">
+									<input type="text" name="correoP" id="correoP"
+										placeholder="Ingresa tu Correo Principal">
 								</div>
 								<div class="form-group">
 									<label for="correoA">Correo Alterno</label>
-									<input type="text" name="correoA" id="correoA" placeholder="Ingresa tu Correo Alterno">
+									<input type="text" name="correoA" id="correoA"
+										placeholder="Ingresa tu Correo Alterno">
 								</div>
 							</div>
 							<div class="form-row">
@@ -155,7 +170,8 @@
 								</div>
 								<div class="form-group">
 									<label for="password">Contraseña</label>
-									<input type="password" name="password" id="password" placeholder="Ingresa tu Contraseña">
+									<input type="password" name="password" id="password"
+										placeholder="Ingresa tu Contraseña">
 								</div>
 							</div>
 							<input type="hidden" name="id" id="id">
@@ -166,17 +182,88 @@
 						</form>
 					</article>
 					<article id="tab9">
-
+						<div class="titulo-table">Soporte</div>
+						<div class="contenedor-tabla">
+							<table class="tabla">
+								<tr class="head">
+									<th>ID Duda</th>
+									<th>Duda Acerca De</th>
+									<th>Correo</th>
+									<th>Detalle de la Duda</th>
+									<th>Atendida</th>
+								</tr>
+								<tbody class="body" id="body-dudas"></tbody>
+							</table>
+						</div>
 					</article>
 					<article id="tab10">
-						
+						<div class="titulo-table">Ayuda</div>
+						<div class="contenedor-actividad">
+							<p>
+								Esta aplicación ayudará a profesores para subir sus materiales y poder insertar
+								sus actividades para que el, la o los alumnos puedan realizar por medio de
+								formularios o juegos de dichas actividades.<br><br>
+								Si se te olvida la contraseña deberás ingresar en el enlace ubicado en la barra
+								lateral derecha “se te olvidó la contraseña”, al ingresar se encuentra datos que te
+								piden para poder restablecer la contraseña o solo indicas tu correo electrónico y
+								palabra secreta y con ello ya se le envía la clave actual, se recomienda después
+								de eso cambiar su contraseña.
+							</p>
+						</div>
+					</article>
+					<article id="tab11">
+						<div class="titulo-table">Crear Usuario</div>
+						<form class="formulario-usuario" id="form-create-user">
+							<div class="form-row">
+								<div class="form-group">
+									<label for="nombre">Nombre Completo</label>
+									<input type="text" name="nombre" id="nombre" placeholder="Ingresa tu usuario">
+								</div>
+
+								<div class="form-group">
+									<label for="telefono">Teléfono</label>
+									<input type="text" name="telefono" id="telefono" placeholder="Ingresa tu teléfono">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label for="correoP">Correo Principal</label>
+									<input type="text" name="correoP" id="correoP"
+										placeholder="Ingresa tu Correo Principal">
+								</div>
+								<div class="form-group">
+									<label for="correoA">Correo Alterno</label>
+									<input type="text" name="correoA" id="correoA"
+										placeholder="Ingresa tu Correo Alterno">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label for="usuario">Usuario</label>
+									<input type="text" name="usuario" id="usuario" placeholder="Ingresa tu Usuario">
+								</div>
+								<div class="form-group">
+									<label for="role">Tipo de Usuario</label>
+									<select name="role" id="role">
+										<option value="1">Administrador</option>
+										<option value="2">Profesor</option>
+										<option value="3">Alumno</option>
+									</select>
+								</div>
+							</div>
+							<input type="hidden" name="action" id="action" value="create">
+							<div class="botones-formulario-usuario">
+								<button id="btn-form-create">Enviar</button>
+							</div>
+						</form>
 					</article>
 				</div>
 			</div>
 
 			<div class="aside">
 				<form class="formulario">
-					<button class="btn-form btn-forth">Cerrar Sesión</button>
+					<button class="btn-form" id="btn-create-user">Crear Usuario</button>
+					<button class="btn-form btn-forth" id="btn-form">Cerrar Sesión</button>
 					<p class="fecha" id="fecha"></p>
 				</form>
 			</div>
@@ -189,6 +276,7 @@
 		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/main_script.js"></script>
 		<script src="js/administrador.js"></script>
+		<script src="https://kit.fontawesome.com/a9439cfc36.js" crossorigin="anonymous"></script>
 	</body>
 
 	</html>

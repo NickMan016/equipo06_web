@@ -28,3 +28,12 @@ $('#btn-login').click(function (e) {
         }
     });
 });
+
+$("#btn-form-perfil").click(function (e) {
+    e.preventDefault();
+    const nombre = $('#nombre').val();
+    const formulario = $('.formulario-usuario');
+    formulario[0].reset();
+
+    alert("Gracias por enviarnos tus comentarios, " + nombre + ".\nTe atenderemos pronto.");
+});

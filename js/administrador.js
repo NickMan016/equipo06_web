@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     sesion();
     cargarUsuarios(1);
 
@@ -50,13 +50,13 @@ $(document).ready(function () {
         if (activeTab == '#tab4')
             cargarUsuarios();
 
-        if (activeTab == '#tab5')
-            cargarActividades();
         if (activeTab == '#tab6')
             cargarEvaluacion();
 
         if (activeTab == '#tab8')
             actualizarPerfil();
+        if (activeTab == '#tab9')
+            obtenerDudas();
     });
 });
 
@@ -89,29 +89,21 @@ function cargarUsuarios(filter) {
             for (let index = 0; index < response.length; index++) {
                 const element = response[index];
                 let item_table = $('<tr>');
+                const btn_borrar = $('<button>', {
+                    class: 'btn-borrar'
+                }).click(function () {
+                    borrarUsuario(element.id_security);
+                });
+                btn_borrar.html('<i class="fas fa-user-times"></i>');
                 item_table.append('<td>' + element.complete_name + '</td>');
                 item_table.append('<td>' + element.email + '</td>');
-                // item_table.append('<td>' + element.email_secundary + '</td>');
                 item_table.append('<td>' + element.user_level + '</td>');
                 item_table.append('<td>' + element.telefono + '</td>');
                 item_table.append('<td>' + element.user + '</td>');
                 item_table.append('<td>' + element.password + '</td>');
+                item_table.append($('<td>', { class: 'center' }).append(btn_borrar));
                 tabla.append(item_table);
             }
-        }
-    });
-}
-
-function cargarActividades() {
-    $.ajax({
-        type: "POST",
-        url: "php/temas.php",
-        data: { filter: 0 },
-        success: (response) => {
-            console.log(response);
-            // const evaluacion = response[0];
-            // $("#titulo").text(evaluacion.activity_tittle);
-            // $("#contenedor-actividad").html(evaluacion.task_description.replace(/\n/g, "<br/>"));
         }
     });
 }
@@ -150,6 +142,44 @@ function actualizarPerfil() {
     });
 }
 
+function borrarUsuario(id) {
+    const res = confirm("¿Estás seguro de borrar a este usuario?");
+
+    if (res) {
+        $.ajax({
+            type: "POST",
+            url: "php/usuariosCRUD.php",
+            data: { action: 'delete', id: id },
+            success: (response) => {
+                // console.log(response);
+                alert(response);
+            }
+        });
+    }
+}
+
+function obtenerDudas() {
+    const tabla_dudas = $("#body-dudas");
+    $.ajax({
+        type: "POST",
+        url: "php/dudas.php",
+        data: { action: 'read' },
+        success: (response) => {
+            console.log(response);
+            for (let index = 0; index < response.length; index++) {
+                const element = response[index];
+                const item = $("<tr>");
+                item.append('<td>' + element.id_support + '</td>');
+                item.append('<td>' + element.activity_tittle + '</td>');
+                item.append('<td>' + element.email + '</td>');
+                item.append('<td>' + element.detail_query + '</td>');
+                item.append('<td>' + element.attended + '</td>');
+                tabla_dudas.append(item);
+            }
+        }
+    });
+}
+
 $("#btn-form-perfil").click(function (e) {
     e.preventDefault();
 
@@ -163,9 +193,32 @@ $("#btn-form-perfil").click(function (e) {
     });
 });
 
-$(".btn-form").click(function (e) { 
+$("#btn-form").click(function (e) {
     e.preventDefault();
     localStorage.removeItem('sesion');
     localStorage.removeItem('dataUser');
     window.location.href = 'index.html';
+});
+
+$("#btn-create-user").click(function (e) {
+    e.preventDefault();
+
+    $('.secciones article').hide();
+    $('ul.menu li a').removeClass('active');
+    $("#tab11").show();
+});
+
+$("#btn-form-create").click(function (e) {
+    e.preventDefault();
+
+    $.ajax({
+        type: "POST",
+        url: "php/usuariosCRUD.php",
+        data: $("#form-create-user").serialize(),
+        success: (response) => {
+            // console.log(response);
+            alert(response);
+            $("#form-create-user")[0].reset();
+        }
+    });
 });

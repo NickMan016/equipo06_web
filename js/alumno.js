@@ -10,8 +10,13 @@ $(document).ready(function () {
         success: (response) => {
             const lista_actividades = $("#actividades");
             const actividades_contenido = $("#actividades-contenido");
+            const list_select = $("#titulo-select");
             for (let index = 0; index < response.length; index++) {
                 const element = response[index];
+                const item_select = $('<option>', {
+                    value: element.id_actividades,
+                    text: element.activity_tittle
+                });
                 const item_list = $('<li>');
                 const actividad = $("<article>", {
                     id: "act" + element.id_actividades,
@@ -32,6 +37,7 @@ $(document).ready(function () {
                     class: 'contenedor-actividad',
                     html: element.task_description.replace(/\n/g, "<br/>"),
                 }));
+                list_select.append(item_select);
                 lista_actividades.append(item_list);
                 actividades_contenido.append(actividad);
             }
@@ -72,8 +78,8 @@ function cargarActividades() {
             for (let index = 0; index < response.length; index++) {
                 const element = response[index];
                 const item_table = $('<tr>');
-                item_table.append('<td>' + element.id_actividades + '</td>');
-                item_table.append('<td>' + element.bloque + '</td>');
+                item_table.append('<td class="center">' + element.id_actividades + '</td>');
+                item_table.append('<td class="center">' + element.bloque + '</td>');
                 item_table.append('<td>' + element.matirials + '</td>');
                 item_table.append('<td>' + element.activity_tittle + '</td>');
 
@@ -126,6 +132,21 @@ $("#btn-form-perfil").click(function (e) {
         data: $('.formulario-usuario').serialize(),
         success: (response) => {
             alert(response);
+        }
+    });
+})
+
+$("#btn-form-duda").click(function (e) {
+    e.preventDefault();
+
+    $.ajax({
+        type: "POST",
+        url: "php/dudas.php",
+        data: $('#formulario-duda').serialize(),
+        success: (response) => {
+            // console.log(response);
+            alert(response);
+            $('#formulario-duda')[0].reset();
         }
     });
 });

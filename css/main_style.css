@@ -174,7 +174,7 @@ header .titulo {
 /* -------------------------------- */
 
 .contenedor {
-    padding: 14px;
+    padding: 20px;
     width: calc(80% - 20px);
     height: calc(100vh - 280px);
     float: left;
@@ -184,8 +184,8 @@ header .titulo {
 
 .contenedor-tabla {
     margin-top: 20px;
-    overflow-y: scroll;
     height: 80%;
+    overflow-y: scroll;
 }
 
 .titulo-table {
@@ -198,22 +198,20 @@ header .titulo {
 }
 
 .tabla {
-    width: 100%;
-    height: 80%;
-    text-align: center;
-    overflow-y: scroll;
+    border-collapse: collapse;
+    min-width: 1000px;
+    text-align: left;
 }
 
-.tabla tr {
-    display: flex;
-    align-content: space-between;
-    align-items: center;
+.tabla td.center {
+    text-align: center;
 }
 
 .tabla td,
 .tabla th {
-    width: 100%;
-    padding: 10px 0;
+    max-width: 200px;
+    min-width: 100px;
+    padding: 10px;
 }
 
 .tabla .head {
@@ -229,6 +227,14 @@ header .titulo {
     border-bottom: 3px solid #72BEFC;
 }
 
+.tabla .btn-borrar {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: #ff2222;
+    cursor: pointer;
+}
+
 .contenedor article iframe {
     display: block;
     margin: auto;
@@ -241,6 +247,19 @@ header .titulo {
     padding:  0 10px;
     text-align: justify;
     overflow-y: scroll;
+}
+
+.contenedor-actividad p {
+    margin-top: 10px;
+}
+
+.contenedor-actividad ul {
+    margin-top: 10px;
+    margin-left: 16px;
+}
+
+.contenedor-actividad ul li {
+    margin-bottom: 5px;
 }
 
 /* --------------------------------- */
@@ -294,7 +313,9 @@ header .titulo {
     width: 21%;
 }
 
-.formulario-usuario .form-group input:focus{
+.formulario-usuario .form-group input:focus,
+.formulario-usuario .form-group select:focus,
+.formulario-usuario .form-group textarea:focus{
     border: 3px solid #0060f0;
 }
 
@@ -324,7 +345,7 @@ header .titulo {
 .aside {
     position: relative;
     margin-bottom: 20px;
-    padding: 14px;
+    padding: 20px;
     width: 20%;
     height: calc(100vh - 220px);
     float: right;
@@ -395,7 +416,7 @@ header .titulo {
 @media screen and (min-height: 850px){
     .fecha {
         position: absolute;
-        bottom: 10px;
+        bottom: 20px !important;
     }
 }
 
